@@ -156,4 +156,4 @@ What _you_ need is a **visual editor** for doing this on your own site &mdash; o
 
 It just so happens that's exactly what's next on the roadmap!
 
-So check out the source, [star the project](https://github.com/jordansexton/jquery.kern/star) if it tickles your fancy, and check back soon.
+So download the source, star the project if it tickles your fancy, and check back soon!
