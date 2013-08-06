@@ -105,7 +105,7 @@ $('h1.draw-me')
 .kern-letter-x + .kern-letter-y { margin-left:  .04em; }
 ```
 
-#### Why don't you [take it for a test drive](http://jsfiddle.net/8XhZk/1/) and see what it looks like?
+#### Why don't you [take it for a test drive](http://jsfiddle.net/jordansexton/8XhZk/2/) and see how it looks?
 
 By default, it looks at the content after applying `text-transform` and other styles, so your pairs for _AV_ display differently than _av_ without messing with your markup.
 
@@ -145,6 +145,8 @@ defaults = {
   }
 };
 ```
+
+More documentation coming soon!
 
 ## What's next?
 
