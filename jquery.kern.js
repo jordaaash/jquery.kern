@@ -5,7 +5,7 @@
   $ = jQuery;
 
   defaults = {
-    chars: true,
+    letters: true,
     words: true,
     transform: true,
     tag: '<span/>',
@@ -17,7 +17,7 @@
   };
 
   kern = function(options) {
-    var chars, settings, split, words;
+    var letters, settings, split, words;
     settings = $.extend({}, this.kern.defaults, options);
     kern = function() {
       var text;
@@ -27,9 +27,9 @@
           return words(this);
         });
       }
-      if (settings.chars) {
+      if (settings.letters) {
         text = text.map(function() {
-          return chars(this);
+          return letters(this);
         });
       }
       return text;
@@ -49,15 +49,15 @@
       }
       return _results;
     };
-    chars = function(node) {
+    letters = function(node) {
       var index, _results;
       $(node).wrap($(settings.tag, {
-        "class": "" + settings.prefix + "-chars"
+        "class": "" + settings.prefix + "-letters"
       }));
       index = node.nodeValue.length;
       _results = [];
       while (--index >= 0) {
-        _results.push(split(node, index, "" + settings.prefix + "-char"));
+        _results.push(split(node, index, "" + settings.prefix + "-letter"));
       }
       return _results;
     };
@@ -75,7 +75,7 @@
       return node;
     };
     if (settings.undo) {
-      this.find("." + settings.prefix + "-words, ." + settings.prefix + "-chars").replaceWith(function() {
+      this.find("." + settings.prefix + "-words, ." + settings.prefix + "-letters").replaceWith(function() {
         return $(this).text();
       });
     }

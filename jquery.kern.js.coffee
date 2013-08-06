@@ -10,7 +10,7 @@
 $ = jQuery # Assume jQuery.noConflict, make a local alias
 
 defaults = # Default settings that can be read/written at jQuery.fn.kern.defaults
-  chars:     true      # Wrap all characters
+  letters:   true      # Wrap all letters
   words:     true      # Wrap all words (successive non-whitespace characters)
   transform: true      # Use nearest CSS text-transform rules for wrapper class naming
   tag:       '<span/>' # Tag for wrapping
@@ -19,13 +19,13 @@ defaults = # Default settings that can be read/written at jQuery.fn.kern.default
   filter:     ->       # Filter content nodes
     @nodeType is 3 and /\S/.test @nodeValue # Include text nodes that are non-empty (contain non-whitespace characters)
 
-kern = (options) -> # Wrap words and characters inside text nodes in tags for styling
+kern = (options) -> # Wrap words and letters inside text nodes in tags for styling
   settings = $.extend {}, @kern.defaults, options # Merge defaults and options non-destructively
 
   kern = -> # Main method
     text = $ @ # Text nodes as jQuery collection
-    (text = text.map -> words @) if settings.words # Wrap words first (order of operations matters) and reduce
-    (text = text.map -> chars @) if settings.chars # Wrap characters and reduce
+    (text = text.map -> words @)   if settings.words   # Wrap words first (order of operations matters) and reduce
+    (text = text.map -> letters @) if settings.letters # Wrap letters and reduce
     text # Return all the text nodes
 
   words = (node) -> # Wrap all words (successive non-whitespace characters)
@@ -34,16 +34,16 @@ kern = (options) -> # Wrap words and characters inside text nodes in tags for st
         \S+            # One or more non-whitespace characters...
         (\s+)?         # ...followed by optional trailing whitespace...
         $              # ...located at the end of the text
-      ///.exec node.nodeValue)? # Iterate over the string backwards for splitting the ends into new nodes
+      ///.exec node.nodeValue)? # Iterate over the string backwards to split the ends into new nodes
       {index, 1: whitespace} = match # Destructuring assignment: http://coffeescript.org/#destructuring
       node.splitText node.nodeValue.length - whitespace.length if whitespace? # Split off any trailing whitespace first
       split node, index, "#{settings.prefix}-word" # Reduce to return an array of nodes
 
-  chars = (node) -> # Wrap all characters
-    $(node).wrap $ settings.tag, class: "#{settings.prefix}-chars" # Wrap all the chars together first
-    index = node.nodeValue.length # Iterate over the string backwards for splitting the ends into new nodes
+  letters = (node) -> # Wrap all letters
+    $(node).wrap $ settings.tag, class: "#{settings.prefix}-letters" # Wrap all the letters together first
+    index = node.nodeValue.length # Iterate over the string backwards to split the ends into new nodes
     while --index >= 0 # Iterate through 0 inclusively to wrap the first character
-      split node, index, "#{settings.prefix}-char" # Reduce to return an array of nodes
+      split node, index, "#{settings.prefix}-letter" # Reduce to return an array of nodes
 
   split = (node, index, prefix) -> # Split text into a new node and wrap it
     node = node.splitText index # https://developer.mozilla.org/en-US/docs/Web/API/Text.splitText
@@ -55,7 +55,7 @@ kern = (options) -> # Wrap words and characters inside text nodes in tags for st
     node # Return the node
 
   if settings.undo # Undo any previous calls first to prevent double wrapping
-    @find(".#{settings.prefix}-words, .#{settings.prefix}-chars").replaceWith -> $(@).text() # Replace the wrapper with the original text
+    @find(".#{settings.prefix}-words, .#{settings.prefix}-letters").replaceWith -> $(@).text() # Replace the wrapper with the original text
 
   @addClass("#{settings.prefix}-kerned") # Mark the targets; use 'visibility: hidden' on unmarked elements to prevent FoUC
     .find(":not(iframe)").addBack() # Avoid missing contentDocument issue: http://bugs.jquery.com/ticket/11275
