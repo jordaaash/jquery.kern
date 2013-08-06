@@ -24,11 +24,11 @@ Even with solid CSS3 support, you're way behind what you'd get with Photoshop or
 
 Let's start by doing something about that.
 
-## I'm 12 and what is this?
+## Clean gloves hide dirty hands
 
 jquery.kern is a jQuery plugin that traverses the DOM and wraps words and/or letters in semantically classed tags for kerning (and general styling).
 
-It helps you keep your markup clean while using code like this...
+It helps you keep your markup neat while using code like this...
 
 ```javascript
 $('h1.draw-me')
@@ -76,7 +76,7 @@ $('h1.draw-me')
   </span>
 </h1>
 ```
-...so you can do pretty things like this...
+...so you can do cool things like this...
 
 ```css
 .draw-me {
