@@ -158,4 +158,15 @@ What _you_ need is a **visual editor** for doing this on your own site &mdash; o
 
 It just so happens that's exactly what's next on the roadmap!
 
-So download the source, star the project if it tickles your fancy, and check back soon!
+So download the source, watch or star the project if it tickles your fancy, and check back soon!
+
+
+
+
+
+
+
+
+
+
+[![githalytics.com alpha](https://cruel-carlota.pagodabox.com/adca3b5071fc5a2b6682e3d87c76f294 "githalytics.com")](http://githalytics.com/jordansexton/jquery.kern)
