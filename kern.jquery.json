@@ -1,0 +1,46 @@
+{
+  "name": "kern",
+  "title": "jquery.kern",
+  "description": "A jQuery plugin for semantically kerning and styling text, written in CoffeeScript and JavaScript.",
+  "keywords": [
+    "kern",
+    "kerning",
+    "font",
+    "fonts",
+    "style",
+    "styling",
+    "css",
+    "type",
+    "typography"
+  ],
+  "version": "0.1.0",
+  "author": {
+    "name": "Jordan Sexton",
+    "email": "jordan@jordansexton.com",
+    "url": "http://jordansexton.com"
+  },
+  "maintainers": [
+    {
+      "name": "Jordan Sexton",
+      "email": "jordan@jordansexton.com",
+      "url": "http://jordansexton.com"
+    }
+  ],
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.opensource.org/licenses/MIT"
+    },
+    {
+      "type": "GPL2",
+      "url": "http://opensource.org/licenses/GPL-2.0"
+    }
+  ],
+  "bugs": "https://github.com/jordansexton/jquery.kern/issues",
+  "homepage": "https://github.com/jordansexton/jquery.kern",
+  "docs": "http://jordansexton/jquery.kern",
+  "demo": "http://jordansexton/jquery.kern",
+  "dependencies": {
+    "jquery": ">=1.10.0"
+  }
+}
