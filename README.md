@@ -26,7 +26,7 @@ Let's start by doing something about that.
 
 ## I'm 12 and what is this?
 
-jquery.kern is a jQuery plugin that traverses the DOM and wraps words and/or characters in semantically classed tags for kerning (and general styling).
+jquery.kern is a jQuery plugin that traverses the DOM and wraps words and/or letters in semantically classed tags for kerning (and general styling).
 
 It helps you keep your markup clean while using code like this...
 
@@ -49,28 +49,28 @@ $('h1.draw-me')
 <h1 class="draw-me like-one-of-your-french-girls kern-kerned">
   <span class="kern-words">
     <span class="kern-word kern-word-super">
-      <span class="kern-chars">
-        <span class="kern-char kern-char-s">S</span>
-        <span class="kern-char kern-char-u">u</span>
-        <span class="kern-char kern-char-p">p</span>
-        <span class="kern-char kern-char-e">e</span>
-        <span class="kern-char kern-char-r">r</span>
+      <span class="kern-letters">
+        <span class="kern-letter kern-letter-s">S</span>
+        <span class="kern-letter kern-letter-u">u</span>
+        <span class="kern-letter kern-letter-p">p</span>
+        <span class="kern-letter kern-letter-e">e</span>
+        <span class="kern-letter kern-letter-r">r</span>
       </span>
     </span>
     <span class="kern-word kern-word-sexy">
-      <span class="kern-chars">
-        <span class="kern-char kern-char-s">s</span>
-        <span class="kern-char kern-char-e">e</span>
-        <span class="kern-char kern-char-x">x</span>
-        <span class="kern-char kern-char-y">y</span>
+      <span class="kern-letters">
+        <span class="kern-letter kern-letter-s">s</span>
+        <span class="kern-letter kern-letter-e">e</span>
+        <span class="kern-letter kern-letter-x">x</span>
+        <span class="kern-letter kern-letter-y">y</span>
       </span>
     </span>
     <span class="kern-word kern-word-text">
-      <span class="kern-chars">
-        <span class="kern-char kern-char-t">t</span>
-        <span class="kern-char kern-char-e">e</span>
-        <span class="kern-char kern-char-x">x</span>
-        <span class="kern-char kern-char-t">t</span>
+      <span class="kern-letters">
+        <span class="kern-letter kern-letter-t">t</span>
+        <span class="kern-letter kern-letter-e">e</span>
+        <span class="kern-letter kern-letter-x">x</span>
+        <span class="kern-letter kern-letter-t">t</span>
       </span>
     </span>
   </span>
@@ -100,9 +100,9 @@ $('h1.draw-me')
   color: red;
 }
 
-.kern-char-s + .kern-char-e { margin-left: -.05em; }
-.kern-char-e + .kern-char-x { margin-left:  .02em; }
-.kern-char-x + .kern-char-y { margin-left:  .04em; }
+.kern-letter-s + .kern-letter-e { margin-left: -.05em; }
+.kern-letter-e + .kern-letter-x { margin-left:  .02em; }
+.kern-letter-x + .kern-letter-y { margin-left:  .04em; }
 ```
 
 #### Why don't you [take it for a test drive](http://jsfiddle.net/8XhZk/1/) and see what it looks like?
@@ -117,7 +117,7 @@ First, let's go straight to the [fully annotated source](http://github.com/jorda
 
 ```coffeescript
 defaults = # Default settings that can be read/written at jQuery.fn.kern.defaults
-  chars:     true      # Wrap all characters
+  letters:   true      # Wrap all letters
   words:     true      # Wrap all words (successive non-whitespace characters)
   transform: true      # Use nearest CSS text-transform rules for wrapper class naming
   tag:       '<span/>' # Tag for wrapping
@@ -134,7 +134,7 @@ And if [CoffeeScript](http://coffeescript.org) isn't your favorite cup of joe, t
 
 ```javascript
 defaults = {
-  chars: true,
+  letters: true,
   words: true,
   transform: true,
   tag: '<span/>',
