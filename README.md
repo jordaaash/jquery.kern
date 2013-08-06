@@ -24,7 +24,7 @@ Even with solid CSS3 support, you're way behind what you'd get with Photoshop or
 
 Let's start by doing something about that.
 
-## Usage
+## I'm 12 and what is this?
 
 jquery.kern is a jQuery plugin that traverses the DOM and wraps words and/or characters in semantically classed tags for kerning (and general styling).
 
@@ -34,7 +34,7 @@ It helps you keep your markup clean while using code like this...
 $('h1.draw-me')
   .addClass('like-one-of-your-french-girls')
   .text('Super sexy text')
-  .kern();
+  .kern()
 ```
 
 ...to turn pretty code like this...
@@ -105,7 +105,7 @@ $('h1.draw-me')
 .kern-char-x + .kern-char-y { margin-left:  .04em; }
 ```
 
-#### Why don't you [take it for a test drive](http://jsfiddle.net/8XhZk/) and see what it looks like?
+#### Why don't you [take it for a test drive](http://jsfiddle.net/8XhZk/1/) and see what it looks like?
 
 By default, it looks at the content after applying `text-transform` and other styles, so your pairs for _AV_ display differently than _av_ without messing with your markup.
 
@@ -152,7 +152,7 @@ defaults = {
 
 Damn right it does! But don't sell yourself short just yet.
 
-What _you_ need is a **visual editor** for doing this on your own site &mdash; one that can generate reusable, semantic styles for you.
+What _you_ need is a **visual editor** for doing this on your own site &mdash; one that can generate reusable, semantic styles _for you_.
 
 It just so happens that's exactly what's next on the roadmap!
 
