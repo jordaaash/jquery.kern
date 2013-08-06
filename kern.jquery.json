@@ -38,8 +38,8 @@
   ],
   "bugs": "https://github.com/jordansexton/jquery.kern/issues",
   "homepage": "https://github.com/jordansexton/jquery.kern",
-  "docs": "http://jordansexton/jquery.kern",
-  "demo": "http://jordansexton/jquery.kern",
+  "docs": "http://github.com/jordansexton/jquery.kern",
+  "demo": "http://github.com/jordansexton/jquery.kern",
   "dependencies": {
     "jquery": ">=1.10.0"
   }
