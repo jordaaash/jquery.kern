@@ -1,10 +1,15 @@
 # jquery.kern
 
 A jQuery plugin for semantically kerning text, written in CoffeeScript.
+
 Copyright © 2013 Jordan Sexton [http://github.com/jordansexton](http://github.com/jordansexton)
+
 MIT and GPL2 dual license, use it however you want.
+
 Depends on [http://github.com/jquery/jquery](http://github.com/jquery/jquery)
+
 Look at these cascading comments!
+
 Right then, where were we?
 
 ## Introduction
@@ -109,9 +114,9 @@ Changing this behavior, or any of the other settings, brings us to...
 
 ## Options
 
-First, let's go straight to [the source](http://github.com/jordansexton/jquery.kern/blob/jquery.kern.js.coffee)!
+First, let's go straight to the [fully annotated source](http://github.com/jordansexton/jquery.kern/blob/master/jquery.kern.js.coffee)!
 
-```coffescript
+```coffeescript
 defaults = # Default settings that can be read/written at jQuery.fn.kern.defaults
   chars:     true      # Wrap all characters
   words:     true      # Wrap all words (successive non-whitespace characters)
@@ -126,7 +131,7 @@ $.extend kern, {defaults: defaults} # Make defaults readable/writable at jQuery.
 $.fn.extend {kern: kern} # Expose jQuery.fn.kern for usage at jQuery(<target>).kern(<{options}>)
 ```
 
-And if [CoffeeScript](http://coffeescript.org) isn't your favorite cup of joe, there's always the [compiled flavor](http://github.com/jordansexton/jquery.kern/blob/jquery.kern.js):
+And if [CoffeeScript](http://coffeescript.org) isn't your favorite cup of joe, there's always the [compiled flavor](http://github.com/jordansexton/jquery.kern/blob/master/jquery.kern.js):
 
 ```javascript
 defaults = {
