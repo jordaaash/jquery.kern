@@ -80,33 +80,32 @@ $('h1.draw-me')
 
 ```css
 .draw-me {
-  font-family: 'Gotham';
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   text-transform: lowercase;
   font-weight: 900;
   font-size: 72px;
+  text-align: center;
 }
 
 .like-one-of-your-french-girls
 .kern-word:nth-of-type(even) {
   font-variant: small-caps;
   font-weight: 100;
-  font-size: 1.1em;
-  margin: 0 -.22em 0 -.25em;
+  font-size: 1.04em;
+  margin: 0 -.22em 0 -.27em;
 }
-```
 
-...or you can create global styling and kerning pairs like this...
-
-```css
 .kern-word-super +
 .kern-word-sexy {
   color: red;
 }
 
-.kern-char-s + .kern-char-e { margin-left: -.11em; }
-.kern-char-e + .kern-char-x { margin-left: -.06em; }
-.kern-char-x + .kern-char-y { margin-left: -.04em; }
+.kern-char-s + .kern-char-e { margin-left: -.05em; }
+.kern-char-e + .kern-char-x { margin-left:  .02em; }
+.kern-char-x + .kern-char-y { margin-left:  .04em; }
 ```
+
+#### Why don't you [take it for a test drive](http://jsfiddle.net/8XhZk/) and see what it looks like?
 
 By default, it looks at the content after applying `text-transform` and other styles, so your pairs for _AV_ display differently than _av_ without messing with your markup.
 
@@ -131,7 +130,7 @@ $.extend kern, {defaults: defaults} # Make defaults readable/writable at jQuery.
 $.fn.extend {kern: kern} # Expose jQuery.fn.kern for usage at jQuery(<target>).kern(<{options}>)
 ```
 
-And if [CoffeeScript](http://coffeescript.org) isn't your favorite cup of joe, there's always the [compiled flavor](http://github.com/jordansexton/jquery.kern/blob/master/jquery.kern.js):
+And if [CoffeeScript](http://coffeescript.org) isn't your favorite cup of joe, there's always the [traditional flavor](http://github.com/jordansexton/jquery.kern/blob/master/jquery.kern.js):
 
 ```javascript
 defaults = {
@@ -149,7 +148,7 @@ defaults = {
 
 ## What's next?
 
-> "I don't know if I'm sexy enough. All this sounds like too much work."
+> _"I don't know if I'm sexy enough. All this sounds like too much work."_
 
 Damn right it does! But don't sell yourself short just yet.
 
@@ -157,4 +156,4 @@ What _you_ need is a **visual editor** for doing this on your own site &mdash; o
 
 It just so happens that's exactly what's next on the roadmap!
 
-So check out the source, [star the project](http://github.com/jordansexton/jquery.kern/star) if it tickles your fancy, and check back soon.
+So check out the source, [star the project](https://github.com/jordansexton/jquery.kern/star) if it tickles your fancy, and check back soon.
