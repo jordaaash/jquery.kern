@@ -1,16 +1,10 @@
 # jquery.kern
 
-A jQuery plugin for semantically kerning text, written in CoffeeScript.
+A jQuery plugin for semantically kerning and styling text, written in CoffeeScript and JavaScript.
 
-Copyright © 2013 Jordan Sexton [http://github.com/jordansexton](http://github.com/jordansexton)
+MIT and GPL2 dual license. Copyright © 2013 Jordan Sexton <[http://github.com/jordansexton](http://github.com/jordansexton)>
 
-MIT and GPL2 dual license, use it however you want.
-
-Depends on [http://github.com/jquery/jquery](http://github.com/jquery/jquery)
-
-Look at these cascading comments!
-
-Right then, where were we?
+Depends on [http://github.com/jquery/jquery](http://github.com/jquery/jquery) 1.8.3+
 
 ## Introduction
 
@@ -159,14 +153,5 @@ What _you_ need is a **visual editor** for doing this on your own site &mdash; o
 It just so happens that's exactly what's next on the roadmap!
 
 So download the source, watch or star the project if it tickles your fancy, and check back soon!
-
-
-
-
-
-
-
-
-
 
 [![githalytics.com alpha](https://cruel-carlota.pagodabox.com/adca3b5071fc5a2b6682e3d87c76f294 "githalytics.com")](http://githalytics.com/jordansexton/jquery.kern)
