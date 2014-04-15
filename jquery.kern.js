@@ -7,7 +7,7 @@
   defaults = {
     letters: true,
     words: true,
-    transform: true,
+    transform: false,
     tag: '<span/>',
     prefix: 'kern',
     undo: true,
