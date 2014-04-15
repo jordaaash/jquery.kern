@@ -2,9 +2,9 @@
 
 A jQuery plugin for semantically kerning and styling text, written in CoffeeScript and JavaScript.
 
-MIT and GPL2 dual license. Copyright © 2013 Jordan Sexton <[http://github.com/jordansexton](http://github.com/jordansexton)>
+MIT and GPL2 dual license. Copyright © 2013 [Jordan Sexton](http://github.com/jordansexton)
 
-Depends on [http://github.com/jquery/jquery](http://github.com/jquery/jquery) 1.8.3+
+Depends on [jQuery](http://github.com/jquery/jquery) 1.8.3+
 
 ## Introduction
 
@@ -99,7 +99,7 @@ $('h1.draw-me')
 .kern-letter-x + .kern-letter-y { margin-left:  .04em; }
 ```
 
-#### Why don't you [take it for a test drive](http://jsfiddle.net/jordansexton/8XhZk/2/) and see how it looks?
+#### Why don't you [take it for a test drive](http://jsfiddle.net/jordansexton/rRfdf/) and see how it looks?
 
 ~~By default~~ Optionally, it looks at the content after applying `text-transform`, `font-variant`, and other styles, so your pairs for _AV_ display differently than _av_ without messing with your markup.
 
