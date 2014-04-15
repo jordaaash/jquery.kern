@@ -42,9 +42,9 @@ $('h1.draw-me')
 ```html
 <h1 class="draw-me like-one-of-your-french-girls kern-kerned">
   <span class="kern-words">
-    <span class="kern-word kern-word-super">
+    <span class="kern-word kern-word-Super">
       <span class="kern-letters">
-        <span class="kern-letter kern-letter-s">S</span>
+        <span class="kern-letter kern-letter-S">S</span>
         <span class="kern-letter kern-letter-u">u</span>
         <span class="kern-letter kern-letter-p">p</span>
         <span class="kern-letter kern-letter-e">e</span>
@@ -89,7 +89,7 @@ $('h1.draw-me')
   margin: 0 -.22em 0 -.27em;
 }
 
-.kern-word-super +
+.kern-word-Super +
 .kern-word-sexy {
   color: red;
 }
@@ -101,9 +101,11 @@ $('h1.draw-me')
 
 #### Why don't you [take it for a test drive](http://jsfiddle.net/jordansexton/8XhZk/2/) and see how it looks?
 
-By default, it looks at the content after applying `text-transform` and other styles, so your pairs for _AV_ display differently than _av_ without messing with your markup.
+~~By default~~ Optionally, it looks at the content after applying `text-transform`, `font-variant`, and other styles, so your pairs for _AV_ display differently than _av_ without messing with your markup.
 
-Changing this behavior, or any of the other settings, brings us to...
+^ This behavior had to be changed to an option rather than the default because Firefox doesn't support node.outerText or any other way to determine actual text content after computed styles are applied.
+
+Adjusting this behavior, or any of the other settings, brings us to...
 
 ## Options
 
@@ -113,7 +115,7 @@ First, let's go straight to the [fully annotated source](http://github.com/jorda
 defaults = # Default settings that can be read/written at jQuery.fn.kern.defaults
   letters:   true      # Wrap all letters
   words:     true      # Wrap all words (successive non-whitespace characters)
-  transform: true      # Use nearest CSS text-transform rules for wrapper class naming
+  transform: false     # Use nearest CSS text-transform rules for wrapper class naming; doesn't work in Firefox because node.outerText isn't supported
   tag:       '<span/>' # Tag for wrapping
   prefix:    'kern'    # Prefix for all class naming (target and wrapper)
   undo:      true      # Undo any previous calls first to prevent double wrapping
@@ -130,7 +132,7 @@ And if [CoffeeScript](http://coffeescript.org) isn't your favorite cup of joe, t
 defaults = {
   letters: true,
   words: true,
-  transform: true,
+  transform: false,
   tag: '<span/>',
   prefix: 'kern',
   undo: true,
