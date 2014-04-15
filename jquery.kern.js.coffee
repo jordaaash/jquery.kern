@@ -1,9 +1,8 @@
-# A jQuery plugin for semantically kerning text, written in CoffeeScript.
-# Copyright © 2013 Jordan Sexton http://github.com/jordansexton
-# MIT and GPL2 dual license, use it however you want.
-# Depends on http://github.com/jquery/jquery
-# Look at these cascading comments!
-# Right then, where were we?
+###
+A jQuery plugin for semantically kerning and styling text, written in CoffeeScript and JavaScript.
+MIT and GPL2 dual license. Copyright © 2013 Jordan Sexton <http://jordansexton.com> <http://github.com/jordansexton>
+Depends on jQuery 1.8.3+ <http://jquery.com> <http://github.com/jquery/jquery>
+###
 
 'use strict' # Invoke strict mode, the fun is over
 
@@ -12,7 +11,7 @@ $ = jQuery # Assume jQuery.noConflict, make a local alias
 defaults = # Default settings that can be read/written at jQuery.fn.kern.defaults
   letters:   true      # Wrap all letters
   words:     true      # Wrap all words (successive non-whitespace characters)
-  transform: true      # Use nearest CSS text-transform rules for wrapper class naming
+  transform: false     # Use nearest CSS text-transform rules for wrapper class naming; doesn't work in Firefox because node.outerText isn't supported
   tag:       '<span/>' # Tag for wrapping
   prefix:    'kern'    # Prefix for all class naming (target and wrapper)
   undo:      true      # Undo any previous calls first to prevent double wrapping
@@ -47,7 +46,7 @@ kern = (options) -> # Wrap words and letters inside text nodes in tags for styli
 
   split = (node, index, prefix) -> # Split text into a new node and wrap it
     node = node.splitText index # https://developer.mozilla.org/en-US/docs/Web/API/Text.splitText
-    if settings.transform # Use node.outerText so that CSS text-transform or any other styles are applied
+    if settings.transform # Use node.outerText so that CSS text-transform or any other styles are applied; not supported in Firefox
       wrapper = $(node).wrap($ settings.tag).parent() # Wrap first and walk up the DOM to pull the node's outerText
       wrapper.attr 'class', "#{prefix} #{prefix}-#{wrapper.prop 'outerText'}" # Use attr instead of addClass because jQuery fix eats trailing spaces: http://bugs.jquery.com/ticket/6050
     else                  # Just use node.nodeValue (semantically correct, stylistically problematic)
