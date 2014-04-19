@@ -8,6 +8,8 @@ Depends on jQuery 1.8.3+ <http://jquery.com> <http://github.com/jquery/jquery>
 
 $ = jQuery # Assume jQuery.noConflict, make a local alias
 
+version = '0.1.6'
+
 defaults = # Default settings that can be read/written at jQuery.fn.kern.defaults
   letters:   true      # Wrap all letters
   words:     true      # Wrap all words (successive non-whitespace characters)
@@ -59,9 +61,9 @@ kern = (options) -> # Wrap words and letters inside text nodes in tags for styli
   @addClass("#{settings.prefix}-kerned") # Mark the targets; use 'visibility: hidden' on unmarked elements to prevent FoUC
     .find(":not(iframe)").addBack() # Avoid missing contentDocument issue: http://bugs.jquery.com/ticket/11275
     .contents().filter(settings.filter) # Find and filter content nodes
-    .map kern # Run the main method on them
+    .map(kern) # Run the main method on them
 
   @ # Return the original targets
 
-$.extend kern, {defaults: defaults} # Make defaults readable/writable at jQuery.fn.kern.defaults
+$.extend kern, {defaults: defaults, version: version} # Make defaults readable/writable at jQuery.fn.kern.defaults
 $.fn.extend {kern: kern} # Expose jQuery.fn.kern for usage at jQuery(<target>).kern(<{options}>)

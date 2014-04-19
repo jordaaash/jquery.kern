@@ -1,7 +1,7 @@
 {
   "name": "jquery-kern",
   "description": "A jQuery plugin for semantically kerning and styling text, written in CoffeeScript and JavaScript.",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "jquery.kern.js",
   "license": ["MIT", "GPL-2.0+"],
   "ignore": [],
