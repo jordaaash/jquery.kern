@@ -1,4 +1,4 @@
-# jquery.kern
+# jQuery.kern
 
 A jQuery plugin for semantically kerning and styling text, written in CoffeeScript and JavaScript.
 
@@ -17,6 +17,17 @@ Unfortunately, aside from getting your `@font-face` onto the damn page, the tool
 Even with solid CSS3 support, you're way behind what you'd get with Photoshop or Illustrator, but responsive design means designing in the browser, and semantic markup means not littering your snazzy display text with styling tags.
 
 Let's start by doing something about that.
+
+## Installation
+
+The best way to install jQuery.kern and stay up to date with releases is with [Bower](http://bower.io). This will also install jQuery for you if you don't have it already.
+
+Open up the terminal, `cd` to your project directory, run `bower install jquery-kern --save`, and add the script to the page or template you want to use it on:
+```html
+<script type="text/javascript" src="path/to/bower/components/jquery-kern/jquery.kern.js"></script>
+```
+
+Alternatively, [get the latest release](https://github.com/jordansexton/jquery.kern/releases/latest) as a zip or `git clone https://github.com/jordansexton/jquery.kern.git` if you like to walk on the wild side and you're ready to rock.
 
 ## Clean gloves hide dirty hands
 
